@@ -69,7 +69,7 @@ public class StageOneManager : MonoBehaviour
             .AppendCallback(() => tutorial.gameObject.SetActive(true))
             .AppendCallback(() => tutorial.GetComponent<TMP_Text>().alpha = 1.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("message"))
-            .Append(tutorial.DOText("今から写真を２まいつづ見せられる。\n新しい方の写真をえらびなさい。\nわかった？？", 2.5f)).SetEase(Ease.Linear)
+            .Append(tutorial.DOText("今から写真を２まいつづ見せられる。\n新しい方の写真をえらびなさい。\nわかった？？", 2.5f)).SetEase(Ease.Linear).SetUpdate(true)
             .AppendInterval(3.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("cutePush"))
             .AppendCallback(() => startButton.gameObject.SetActive(true));

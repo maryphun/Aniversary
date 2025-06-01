@@ -88,7 +88,7 @@ public class EndStory : MonoBehaviour
         chattext.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
+        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
     }
 
     void SetNextNarrative(string text, float time = 0)
@@ -104,7 +104,7 @@ public class EndStory : MonoBehaviour
         narrativeText.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
+        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
     }
 
     void SetNextSequenceTime(float time)

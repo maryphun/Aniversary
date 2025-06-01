@@ -18,7 +18,7 @@ public class GameoverManager : MonoBehaviour
 
         DOTween.Sequence()
             .AppendInterval(2.0f)
-            .Append(text.DOText(showtext, showtextTime)).SetEase(Ease.Linear)
+            .Append(text.DOText(showtext, showtextTime)).SetEase(Ease.Linear).SetUpdate(true)
             .AppendInterval(1f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("kawaii"))
             .AppendCallback(() => retrybutton.gameObject.SetActive(true));

@@ -53,7 +53,7 @@ public class StageTwoManager : MonoBehaviour
             .AppendCallback(() => tutorial.gameObject.SetActive(true))
             .AppendCallback(() => tutorial.GetComponent<TMP_Text>().alpha = 1.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("message"))
-            .Append(tutorial.DOText("この一年間発生したことでしつもんします。\nそれぞれの出来ことはどっちの方が当てはまるか\n当ててください。\nわかった？？", 3.0f)).SetEase(Ease.Linear)
+            .Append(tutorial.DOText("この一年間発生したことでしつもんします。\nそれぞれの出来ことはどっちの方が当てはまるか\n当ててください。\nわかった？？", 3.0f)).SetEase(Ease.Linear).SetUpdate(true)
             .AppendInterval(1.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("cutePush"))
             .AppendCallback(() => startButton.gameObject.SetActive(true));
@@ -193,7 +193,9 @@ public class StageTwoManager : MonoBehaviour
         currentQuestion.Question = original.Question;
         currentQuestion.isSarah = original.isSarah;
 
-        questionText.DOText(currentQuestion.Question, 1.5f).SetEase(Ease.Linear);
+        questionText.DOComplete(false);
+        questionText.SetText(string.Empty);
+        questionText.DOText(currentQuestion.Question, 1.5f).SetEase(Ease.Linear).SetUpdate(true);
         AudioManager.Instance.PlaySFX("message");
 
         questionAsked++;
