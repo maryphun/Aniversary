@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -80,7 +80,7 @@ public class StoryStart : MonoBehaviour
         chattext.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
+        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
     }
 
     void SetNextNarrative(string text, float time = 0)
@@ -96,7 +96,7 @@ public class StoryStart : MonoBehaviour
         narrativeText.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
+        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
     }
 
     void SetNextSequenceTime(float time)
@@ -121,11 +121,11 @@ public class StoryStart : MonoBehaviour
         switch (currentSequence)
         {
             case 1:
-                SetNextDialogue("‚½‚¢‚Ö‚ñ‚¾I", 1.0f, new Vector2(650, 220));
+                SetNextDialogue("ãŸã„ã¸ã‚“ã ï¼", 1.0f, new Vector2(650, 220));
                 SetNextSequenceTime(1.1f);
                 break;
             case 2:
-                SetNextDialogue("ƒTƒ‰‚ª‚µ‚å‚Ú‚ñ‚µ‚Ä‚¢‚éII", 2.0f, new Vector2(650, 320));
+                SetNextDialogue("ã‚µãƒ©ãŒã—ã‚‡ã¼ã‚“ã—ã¦ã„ã‚‹ï¼ï¼", 2.0f, new Vector2(650, 320));
                 SetNextSequenceTime(2.1f);
                 break;
             case 3:
@@ -139,36 +139,36 @@ public class StoryStart : MonoBehaviour
                 SetNextSequenceTime(1.2f);
                 break;
             case 4:
-                SetNextDialogue("‚±‚Ü‚Á‚½...", 1.0f, new Vector2(650, 220));
+                SetNextDialogue("ã“ã¾ã£ãŸ...", 1.0f, new Vector2(650, 220));
                 SetNextSequenceTime(1.1f);
                 break;
             case 5:
-                SetNextDialogue("‚È‚ñ‚Æ‚©‚µ‚È‚¢‚Æ...I", 1.5f, new Vector2(650, 320));
+                SetNextDialogue("ãªã‚“ã¨ã‹ã—ãªã„ã¨...ï¼", 1.5f, new Vector2(650, 320));
                 SetNextSequenceTime(1.6f);
                 break;
             case 6:
-                SetNextDialogue("‚Ç‚¤‚µ‚æ‚¤...", 1.0f, new Vector2(650, 220));
+                SetNextDialogue("ã©ã†ã—ã‚ˆã†...", 1.0f, new Vector2(650, 220));
                 SetNextSequenceTime(1.1f);
                 break;
             case 7:
                 SetNextDialogue(string.Empty);
-                SetNextNarrative("‚»‚µ‚ÄƒƒŠ[‚Í“ñl‚Ìv‚¢o‚©‚ç\nƒTƒ‰‚ª‚µ‚å‚Ú‚ñ‚É‚È‚Á‚Ä‚¢‚éŒ´‚¢‚ñ\n‚Ìƒqƒ“ƒg‚ğ‚³‚ª‚·‚Ì‚¾‚Á‚½B", 4.0f);
+                SetNextNarrative("ãã—ã¦ãƒ¡ãƒªãƒ¼ã¯äºŒäººã®æ€ã„å‡ºã‹ã‚‰\nã‚µãƒ©ãŒã—ã‚‡ã¼ã‚“ã«ãªã£ã¦ã„ã‚‹åŸã„ã‚“\nã®ãƒ’ãƒ³ãƒˆã‚’ã•ãŒã™ã®ã ã£ãŸã€‚", 4.0f);
                 SetNextSequenceTime(4.1f);
                 break;
             case 8:
                 SetSprite(panda, thinking_panda);
-                SetNextDialogue("v‚¢o‚¹...!\n‚È‚É‚ª‚ ‚Á‚½‚Ì‚©...", 1.5f, new Vector2(650, 320));
+                SetNextDialogue("æ€ã„å‡ºã›...!\nãªã«ãŒã‚ã£ãŸã®ã‹...", 1.5f, new Vector2(650, 320));
                 SetNextNarrative(string.Empty);
                 SetNextSequenceTime(3.1f);
                 break;
             case 9:
                 SetNextDialogue(string.Empty);
-                SetNextNarrative("‚Í‚â‚­‚µ‚È‚¢‚ÆA‚³‚ç‚ª‚¸‚Á‚Æ‚µ‚å‚Ú‚ñ‚É‚È‚éIII\n‚»‚ñ‚È‚±‚Æ‚Íƒ_ƒ‚ÉŒˆ‚Ü‚Á‚Ä‚éI", 4.0f);
+                SetNextNarrative("ã¯ã‚„ãã—ãªã„ã¨ã€ã•ã‚‰ãŒãšã£ã¨ã—ã‚‡ã¼ã‚“ã«ãªã‚‹ï¼ï¼ï¼\nãã‚“ãªã“ã¨ã¯ãƒ€ãƒ¡ã«æ±ºã¾ã£ã¦ã‚‹ï¼", 4.0f);
                 SetNextSequenceTime(4.1f);
                 break;
             case 10:
                 SetNextDialogue(string.Empty);
-                SetNextNarrative("‚ª‚ñ‚Î‚êI\nƒƒŠ[IIIII", 2.0f);
+                SetNextNarrative("ãŒã‚“ã°ã‚Œï¼\nãƒ¡ãƒªãƒ¼ï¼ï¼ï¼ï¼ï¼", 2.0f);
                 SetNextSequenceTime(2.1f);
                 break;
             case 11:

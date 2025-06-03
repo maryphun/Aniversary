@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
@@ -69,7 +69,7 @@ public class StageOneManager : MonoBehaviour
             .AppendCallback(() => tutorial.gameObject.SetActive(true))
             .AppendCallback(() => tutorial.GetComponent<TMP_Text>().alpha = 1.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("message"))
-            .Append(tutorial.DOText("ç°Ç©ÇÁé ê^ÇÇQÇ‹Ç¢Ç¬Ç√å©ÇπÇÁÇÍÇÈÅB\nêVÇµÇ¢ï˚ÇÃé ê^ÇÇ¶ÇÁÇ—Ç»Ç≥Ç¢ÅB\nÇÌÇ©Ç¡ÇΩÅHÅH", 2.5f)).SetEase(Ease.Linear).SetUpdate(true)
+            .Append(tutorial.DOText("‰ªä„Åã„ÇâÂÜôÁúü„ÇíÔºí„Åæ„ÅÑ„Å§„Å•Ë¶ã„Åõ„Çâ„Çå„Çã„ÄÇ\nÊñ∞„Åó„ÅÑÊñπ„ÅÆÂÜôÁúü„Çí„Åà„Çâ„Å≥„Å™„Åï„ÅÑ„ÄÇ\n„Çè„Åã„Å£„ÅüÔºüÔºü", 2.5f)).SetEase(Ease.Linear)
             .AppendInterval(3.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("cutePush"))
             .AppendCallback(() => startButton.gameObject.SetActive(true));
@@ -82,8 +82,8 @@ public class StageOneManager : MonoBehaviour
         tutorial.gameObject.SetActive(false);
         gametitle.gameObject.SetActive(true);
 
-        scoreCnt.text = "ÉXÉRÉA 0";
-        questionCnt.text = "ñ‚ëË 1";
+        scoreCnt.text = "„Çπ„Ç≥„Ç¢ 0";
+        questionCnt.text = "ÂïèÈ°å 1";
 
         DOTween.Sequence()
            .AppendInterval(0.75f)
@@ -125,7 +125,7 @@ public class StageOneManager : MonoBehaviour
     void Correct()
     {
         score++;
-        scoreCnt.text = "ÉXÉRÉA " + score.ToString();
+        scoreCnt.text = "„Çπ„Ç≥„Ç¢ " + score.ToString();
         AudioManager.Instance.PlaySFX("correct");
 
         panda.sprite = panda_correct;
@@ -165,7 +165,7 @@ public class StageOneManager : MonoBehaviour
             blackboard.GetComponent<CanvasGroup>().DOFade(0.0f, 1.0f);
 
             resultPanel.SetActive(true);
-            resultScore.SetText("ÉXÉRÉA <size=100>" + score.ToString() + "/" + memory_set.Length.ToString());
+            resultScore.SetText("„Çπ„Ç≥„Ç¢ <size=100>" + score.ToString() + "/" + memory_set.Length.ToString());
 
             DOTween.Sequence()
            .AppendInterval(2.0f)
@@ -197,7 +197,7 @@ public class StageOneManager : MonoBehaviour
                }
            });
 
-            // åãâ 
+            // ÁµêÊûú
             return;
         }
 
@@ -215,6 +215,6 @@ public class StageOneManager : MonoBehaviour
         image_first.sprite = currentMemory.memory_first;
         image_second.sprite = currentMemory.memory_second;
         questionAsked++;
-        questionCnt.text = "ñ‚ëË " + questionAsked.ToString();
+        questionCnt.text = "ÂïèÈ°å " + questionAsked.ToString();
     }
 }

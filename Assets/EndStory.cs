@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -88,7 +88,7 @@ public class EndStory : MonoBehaviour
         chattext.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
+        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
     }
 
     void SetNextNarrative(string text, float time = 0)
@@ -104,7 +104,7 @@ public class EndStory : MonoBehaviour
         narrativeText.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
+        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
     }
 
     void SetNextSequenceTime(float time)
@@ -129,15 +129,15 @@ public class EndStory : MonoBehaviour
         switch (currentSequence)
         {
             case 1:
-                SetNextDialogue("‚â‚Á‚Æv‚¢o‚µ‚½I", 1.0f, new Vector2(650, 220));
+                SetNextDialogue("ã‚„ã£ã¨æ€ã„å‡ºã—ãŸï¼", 1.0f, new Vector2(650, 220));
                 SetNextSequenceTime(1.1f);
                 break;
             case 2:
-                SetNextDialogue("¡“ú‚Í‚È‚ñ‚Æ....", 1.5f, new Vector2(550, 220));
+                SetNextDialogue("ä»Šæ—¥ã¯ãªã‚“ã¨....", 1.5f, new Vector2(550, 220));
                 SetNextSequenceTime(1.6f);
                 break;
             case 3:
-                SetNextDialogue("‚Ú‚­‚Æ‚³‚ç‚Ìˆê‚µ‚ã‚¤”N‹L‚Ë‚ñ“ú‚¾‚Á‚½‚ñ‚¾II", 1.5f, new Vector2(650, 320));
+                SetNextDialogue("ã¼ãã¨ã•ã‚‰ã®ä¸€ã—ã‚…ã†å¹´è¨˜ã­ã‚“æ—¥ã ã£ãŸã‚“ã ï¼ï¼", 1.5f, new Vector2(650, 320));
                 SetNextSequenceTime(1.6f);
                 break;
             case 4:
@@ -148,35 +148,35 @@ public class EndStory : MonoBehaviour
                 break;
             case 5:
                 SetSprite(panda, happy_panda);
-                SetNextDialogue("‚â‚Á‚½I\n‚ ‚Á‚½‚İ‚½‚¢‚¾I\n‚µ‚å‚Ú‚ñ‚µ‚È‚­‚È‚Á‚Ä‚¢‚éI", 3.0f, new Vector2(550, 430));
+                SetNextDialogue("ã‚„ã£ãŸï¼\nã‚ã£ãŸã¿ãŸã„ã ï¼\nã—ã‚‡ã¼ã‚“ã—ãªããªã£ã¦ã„ã‚‹ï¼", 3.0f, new Vector2(550, 430));
                 AudioManager.Instance.PlaySFX("success");
                 SetNextSequenceTime(3.1f);
                 break;
             case 6:
-                SetNextDialogue("‚³‚çA‚¢‚Â‚à–{“–‚É‚ ‚è‚ª‚½‚¤B", 2.0f, new Vector2(650, 320));
+                SetNextDialogue("ã•ã‚‰ã€ã„ã¤ã‚‚æœ¬å½“ã«ã‚ã‚ŠãŒãŸã†ã€‚", 2.0f, new Vector2(650, 320));
                 SetNextSequenceTime(2.1f);
                 break;
             case 7:
-                SetNextDialogue("‚¨‚©‚°‚³‚Ü‚Å‚·‚²‚­‚½‚Ì‚µ‚¢ˆê”N‚ğ‚·‚²‚¹‚½B", 1.5f, new Vector2(650, 320));
+                SetNextDialogue("ãŠã‹ã’ã•ã¾ã§ã™ã”ããŸã®ã—ã„ä¸€å¹´ã‚’ã™ã”ã›ãŸã€‚", 1.5f, new Vector2(650, 320));
                 SetNextSequenceTime(1.6f);
                 break;
             case 8:
-                SetNextDialogue("‚±‚ê‚©‚ç‚àA\n‚¸‚Á‚Æ‚¸‚Á‚Æ‚æ‚ë‚µ‚­‚ËB", 1.5f, new Vector2(650, 350));
+                SetNextDialogue("ã“ã‚Œã‹ã‚‰ã‚‚ã€\nãšã£ã¨ãšã£ã¨ã‚ˆã‚ã—ãã­ã€‚", 1.5f, new Vector2(650, 350));
                 SetNextSequenceTime(1.6f);
                 break;
             case 9:
-                SetNextDialogue("‚à‚¤‹L‚Ë‚ñ“ú‚ğ‚í‚·‚ê‚é‚±‚Æ‚Í‚È‚¢‚æI", 2.0f, new Vector2(650, 320));
+                SetNextDialogue("ã‚‚ã†è¨˜ã­ã‚“æ—¥ã‚’ã‚ã™ã‚Œã‚‹ã“ã¨ã¯ãªã„ã‚ˆï¼", 2.0f, new Vector2(650, 320));
                 SetNextNarrative(string.Empty);
                 SetNextSequenceTime(2.1f);
                 break;
             case 10:
-                SetNextDialogue("‚³‚ç‚Ì‚±‚Æ‘å‚·‚«I", 1.5f, new Vector2(650, 320));
+                SetNextDialogue("ã•ã‚‰ã®ã“ã¨å¤§ã™ãï¼", 1.5f, new Vector2(650, 320));
                 SetNextNarrative(string.Empty);
                 SetNextSequenceTime(1.6f);
                 break;
             case 11:
                 SetNextDialogue(string.Empty);
-                SetNextNarrative("‚³‚ç‚Ì‚±‚Æ‘å‚·‚«I", 2.0f);
+                SetNextNarrative("ã•ã‚‰ã®ã“ã¨å¤§ã™ãï¼", 2.0f);
                 SetNextSequenceTime(2.1f);
                 break;
             case 12:

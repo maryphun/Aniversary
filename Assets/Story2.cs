@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -82,7 +82,7 @@ public class Story2 : MonoBehaviour
         chattext.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
+        chattext.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
     }
 
     void SetNextNarrative(string text, float time = 0)
@@ -98,7 +98,7 @@ public class Story2 : MonoBehaviour
         narrativeText.text = "";
         AudioManager.Instance.PlaySFX("message");
 
-        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear).SetUpdate(true);
+        narrativeText.GetComponent<TextMeshProUGUI>().DOText(text, time).SetEase(Ease.Linear);
     }
 
     void SetNextSequenceTime(float time)
@@ -123,11 +123,11 @@ public class Story2 : MonoBehaviour
         switch (currentSequence)
         {
             case 1:
-                SetNextDialogue("‚½‚¢‚Ö‚ñ...", 1.0f, new Vector2(550, 220));
+                SetNextDialogue("ãŸã„ã¸ã‚“...", 1.0f, new Vector2(550, 220));
                 SetNextSequenceTime(1.1f);
                 break;
             case 2:
-                SetNextDialogue("‚à‚¤l‚¦‚Â‚©‚ê‚½...", 1.5f, new Vector2(650, 220));
+                SetNextDialogue("ã‚‚ã†è€ƒãˆã¤ã‹ã‚ŒãŸ...", 1.5f, new Vector2(650, 220));
                 SetNextSequenceTime(1.6f);
                 break;
             case 3:
@@ -141,11 +141,11 @@ public class Story2 : MonoBehaviour
                 SetNextSequenceTime(1.2f);
                 break;
             case 4:
-                SetNextDialogue("‚µ‚©‚à‚³‚ç‚Í‚³‚Á‚«‚æ‚è‚É‚µ‚å‚Ú‚ñ‚µ‚Ä‚¢‚é...II", 3.0f, new Vector2(650, 320));
+                SetNextDialogue("ã—ã‹ã‚‚ã•ã‚‰ã¯ã•ã£ãã‚ˆã‚Šã«ã—ã‚‡ã¼ã‚“ã—ã¦ã„ã‚‹...ï¼ï¼", 3.0f, new Vector2(650, 320));
                 SetNextSequenceTime(3.1f);
                 break;
             case 5:
-                SetNextDialogue("‚È‚ñ‚Æ‚©‚µ‚Ä‚â‚è‚½‚¢I", 2.0f, new Vector2(650, 220));
+                SetNextDialogue("ãªã‚“ã¨ã‹ã—ã¦ã‚„ã‚ŠãŸã„ï¼", 2.0f, new Vector2(650, 220));
                 SetNextSequenceTime(2.1f);
                 break;
             case 6:
@@ -154,12 +154,12 @@ public class Story2 : MonoBehaviour
                 break;
             case 7:
                 SetNextDialogue(string.Empty);
-                SetNextNarrative("‚ß‚è[‚Í‚à‚¤‚¢‚Á‚©‚¢‚±‚Ìˆê”N‚Ì‚¨‚à‚¢‚Å‚ğ‚Ó‚è‚©‚¦‚Ä‚İ‚é", 4.0f);
+                SetNextNarrative("ã‚ã‚Šãƒ¼ã¯ã‚‚ã†ã„ã£ã‹ã„ã“ã®ä¸€å¹´ã®ãŠã‚‚ã„ã§ã‚’ãµã‚Šã‹ãˆã¦ã¿ã‚‹", 4.0f);
                 SetNextSequenceTime(4.1f);
                 break;
             case 8:
                 SetSprite(panda, thinking_panda);
-                SetNextDialogue("‚º‚Á‚½‚¢‚È‚É‚©ƒqƒ“ƒg‚ª‚ ‚é‚Í‚¸‚¾I", 2.0f, new Vector2(650, 320));
+                SetNextDialogue("ãœã£ãŸã„ãªã«ã‹ãƒ’ãƒ³ãƒˆãŒã‚ã‚‹ã¯ãšã ï¼", 2.0f, new Vector2(650, 320));
                 SetNextNarrative(string.Empty);
                 SetNextSequenceTime(2.1f);
                 break;

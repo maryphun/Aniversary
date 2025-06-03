@@ -7,7 +7,7 @@ public class GameoverManager : MonoBehaviour
     public GameObject retrybutton;
     public TMPro.TMP_Text text;
     public string BGM = "Mischief in Motion";
-    public string showtext = "‚Ó‚½‚è‚Ç‚à‚µ‚å‚Ú‚ñ‚µ‚Ä‚¢‚é...\n‚à‚¤ƒ_ƒ‚¾...";
+    [TextArea] public string showtext = "‚Ó‚½‚è‚Ç‚à‚µ‚å‚Ú‚ñ‚µ‚Ä‚¢‚é...\n‚à‚¤ƒ_ƒ‚¾...";
     public float showtextTime = 3.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

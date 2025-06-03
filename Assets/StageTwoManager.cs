@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
@@ -53,7 +53,7 @@ public class StageTwoManager : MonoBehaviour
             .AppendCallback(() => tutorial.gameObject.SetActive(true))
             .AppendCallback(() => tutorial.GetComponent<TMP_Text>().alpha = 1.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("message"))
-            .Append(tutorial.DOText("Ç±ÇÃàÍîNä‘î≠ê∂ÇµÇΩÇ±Ç∆Ç≈ÇµÇ¬Ç‡ÇÒÇµÇ‹Ç∑ÅB\nÇªÇÍÇºÇÍÇÃèoóàÇ±Ç∆ÇÕÇ«Ç¡ÇøÇÃï˚Ç™ìñÇƒÇÕÇ‹ÇÈÇ©\nìñÇƒÇƒÇ≠ÇæÇ≥Ç¢ÅB\nÇÌÇ©Ç¡ÇΩÅHÅH", 3.0f)).SetEase(Ease.Linear).SetUpdate(true)
+            .Append(tutorial.DOText("„Åì„ÅÆ‰∏ÄÂπ¥ÈñìÁô∫Áîü„Åó„Åü„Åì„Å®„Åß„Åó„Å§„ÇÇ„Çì„Åó„Åæ„Åô„ÄÇ\n„Åù„Çå„Åû„Çå„ÅÆÂá∫Êù•„Åì„Å®„ÅØ„Å©„Å£„Å°„ÅÆÊñπ„ÅåÂΩì„Å¶„ÅØ„Åæ„Çã„Åã\nÂΩì„Å¶„Å¶„Åè„Å†„Åï„ÅÑ„ÄÇ\n„Çè„Åã„Å£„ÅüÔºüÔºü", 3.0f)).SetEase(Ease.Linear)
             .AppendInterval(1.0f)
             .AppendCallback(() => AudioManager.Instance.PlaySFX("cutePush"))
             .AppendCallback(() => startButton.gameObject.SetActive(true));
@@ -65,8 +65,8 @@ public class StageTwoManager : MonoBehaviour
         startButton.gameObject.SetActive(false);
         tutorial.gameObject.SetActive(false);
 
-        scoreCnt.text = "ÉXÉRÉA 0";
-        questionCnt.text = "ñ‚ëË 1";
+        scoreCnt.text = "„Çπ„Ç≥„Ç¢ 0";
+        questionCnt.text = "ÂïèÈ°å 1";
 
         DOTween.Sequence()
            .AppendInterval(0.75f)
@@ -107,7 +107,7 @@ public class StageTwoManager : MonoBehaviour
     void Correct()
     {
         score++;
-        scoreCnt.text = "ÉXÉRÉA " + score.ToString();
+        scoreCnt.text = "„Çπ„Ç≥„Ç¢ " + score.ToString();
         AudioManager.Instance.PlaySFX("correct");
 
         rabbit.sprite = rabbit_correct;
@@ -147,7 +147,7 @@ public class StageTwoManager : MonoBehaviour
             blackboard.GetComponent<CanvasGroup>().DOFade(0.0f, 1.0f);
 
             resultPanel.SetActive(true);
-            resultScore.SetText("ÉXÉRÉA <size=100>" + score.ToString() + "/" + question_set.Length.ToString());
+            resultScore.SetText("„Çπ„Ç≥„Ç¢ <size=100>" + score.ToString() + "/" + question_set.Length.ToString());
 
             DOTween.Sequence()
            .AppendInterval(2.0f)
@@ -179,7 +179,7 @@ public class StageTwoManager : MonoBehaviour
                }
            });
 
-            // åãâ 
+            // ÁµêÊûú
             return;
         }
 
@@ -193,12 +193,10 @@ public class StageTwoManager : MonoBehaviour
         currentQuestion.Question = original.Question;
         currentQuestion.isSarah = original.isSarah;
 
-        questionText.DOComplete(false);
-        questionText.SetText(string.Empty);
-        questionText.DOText(currentQuestion.Question, 1.5f).SetEase(Ease.Linear).SetUpdate(true);
+        questionText.DOText(currentQuestion.Question, 1.5f).SetEase(Ease.Linear);
         AudioManager.Instance.PlaySFX("message");
 
         questionAsked++;
-        questionCnt.text = "ñ‚ëË " + questionAsked.ToString();
+        questionCnt.text = "ÂïèÈ°å " + questionAsked.ToString();
     }
 }
